@@ -44,7 +44,7 @@ class JqadmControllerTest extends \Neos\Flow\Tests\FunctionalTestCase
 	public function testDeleteAction()
 	{
 		$response = $this->browser->request( 'http://localhost/unittest/jqadm/delete/product/0', 'GET' );
-print_r( $response );
+error_log( print_r( $response, true ) );
 
 		$this->assertEquals( 200, $response->getStatusCode() );
 		$this->assertContains( 'list-items', $response->getContent() );
@@ -72,7 +72,7 @@ print_r( $response );
 	public function testSearchAction()
 	{
 		$response = $this->browser->request( 'http://localhost/unittest/jqadm/search/product', 'GET' );
-print_r( $response );
+error_log( print_r( $response, true ) );
 
 		$this->assertEquals( 200, $response->getStatusCode() );
 		$this->assertContains( 'list-items', $response->getContent() );
